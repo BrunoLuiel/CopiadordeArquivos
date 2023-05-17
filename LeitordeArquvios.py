@@ -11,7 +11,11 @@ def copiador(main_path, sec_path, ext):
                 if ext in file:
                     contArq = contArq + 1
                     old_path = root + '\\'+ file
-                    shutil.copy2(old_path, sec_path + file)
+                    try:
+                        shutil.copy2(old_path, sec_path + file)
+                    except:
+                        pass
+
         return contArq
     else:
         return False
